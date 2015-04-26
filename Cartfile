@@ -1,0 +1,8 @@
+github "facebook/pop"              "master"
+github "Alamofire/Alamofire"       "master"
+github "SnapKit/SnapKit"           "master"
+github "SwiftyJSON/SwiftyJSON"     "master"
+#github "Realm/realm-cocoa"         "master"
+
+
+

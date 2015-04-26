@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tyQ-Um-uRH">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vga-6N-d9k">
+            <objects>
+                <navigationController id="tyQ-Um-uRH" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="l9I-yg-Hfp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="6Or-9K-f59"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bAQ-by-FdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-76" y="240"/>
+        </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FeedViewController" customModule="YoutubePlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pHM-vR-5fM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="240"/>
+        </scene>
+        <!--Video View Controller-->
+        <scene sceneID="0TL-g0-IPW">
+            <objects>
+                <viewController storyboardIdentifier="VideoViewController" id="nvQ-fb-8B9" customClass="VideoViewController" customModule="YoutubePlayer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Doe-wp-rv3"/>
+                        <viewControllerLayoutGuide type="bottom" id="XV6-E3-ODG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jzB-Bf-rHM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PUw-jz-45i" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="180"/>
+                                <color key="backgroundColor" white="0.90237801535087703" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PUw-jz-45i" secondAttribute="height" multiplier="16:9" id="WiM-fx-adN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b4F-dg-O0a" userLabel="Mask">
+                                <rect key="frame" x="0.0" y="20" width="320" height="180"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="a37-6z-X8a">
+                                        <rect key="frame" x="150" y="80" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="a37-6z-X8a" secondAttribute="centerY" id="Hch-hS-40Y"/>
+                                    <constraint firstAttribute="centerX" secondItem="a37-6z-X8a" secondAttribute="centerX" id="zE3-ma-zOO"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLo-Jn-MJv">
+                                <rect key="frame" x="0.0" y="200" width="320" height="368"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.94992118969298234" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RLo-Jn-MJv" firstAttribute="leading" secondItem="jzB-Bf-rHM" secondAttribute="leading" id="CUz-Lg-zlT"/>
+                            <constraint firstItem="XV6-E3-ODG" firstAttribute="top" secondItem="RLo-Jn-MJv" secondAttribute="bottom" id="DZf-oJ-gJn"/>
+                            <constraint firstItem="PUw-jz-45i" firstAttribute="top" secondItem="Doe-wp-rv3" secondAttribute="bottom" id="HVA-Sz-Gwf"/>
+                            <constraint firstAttribute="trailing" secondItem="RLo-Jn-MJv" secondAttribute="trailing" id="Ivh-H3-I3a"/>
+                            <constraint firstItem="PUw-jz-45i" firstAttribute="top" secondItem="b4F-dg-O0a" secondAttribute="top" id="Oe4-RE-QTO"/>
+                            <constraint firstAttribute="trailing" secondItem="PUw-jz-45i" secondAttribute="trailing" id="QJT-af-DKq"/>
+                            <constraint firstItem="RLo-Jn-MJv" firstAttribute="top" secondItem="b4F-dg-O0a" secondAttribute="bottom" id="WXG-cC-1GD"/>
+                            <constraint firstItem="PUw-jz-45i" firstAttribute="trailing" secondItem="b4F-dg-O0a" secondAttribute="trailing" id="eYD-UH-n8E"/>
+                            <constraint firstItem="PUw-jz-45i" firstAttribute="leading" secondItem="b4F-dg-O0a" secondAttribute="leading" id="sBY-Z5-lTK"/>
+                            <constraint firstItem="PUw-jz-45i" firstAttribute="leading" secondItem="jzB-Bf-rHM" secondAttribute="leading" id="wjX-ZN-TWS"/>
+                            <constraint firstItem="PUw-jz-45i" firstAttribute="bottom" secondItem="b4F-dg-O0a" secondAttribute="bottom" id="xvC-QH-Dim"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="indicator" destination="a37-6z-X8a" id="sIQ-Kp-ctA"/>
+                        <outlet property="playerMaskView" destination="b4F-dg-O0a" id="oAr-O1-GdS"/>
+                        <outlet property="playerView" destination="PUw-jz-45i" id="sxK-3m-w7M"/>
+                        <outlet property="scrollView" destination="RLo-Jn-MJv" id="Drg-J8-Dh7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUf-pq-nHZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="240"/>
+        </scene>
+    </scenes>
+</document>
